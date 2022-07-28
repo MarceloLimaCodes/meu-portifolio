@@ -1,6 +1,20 @@
+body {
+    background: url("./assets/wallpaper1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: consolas;
+}
+
 * {
     margin: 0;
     padding: 0;
+}
+
+.mobile-menu #hamb {
+    display: none;
+    height: 30px;
+    cursor: pointer;
 }
 
 a {
@@ -13,139 +27,43 @@ a:hover {
     opacity: 0.7;
 }
 
-.logo {
-    font-size: 24px;
-    text-transform: uppercase;
-    letter-spacing: 4px;
-}
-
-nav {
+header {
     display: flex;
     justify-content: space-around;
     align-items: center;
     font-family: system-ui, -apple-system, Arial, Helvetica, sans-serif;
     background: #23232e;
     height: 8vh;
+    margin-bottom: 50px;
 }
 
-main {
-    background: url("./assets/wallpaper1.jpg") no-repeat center center;
-    background-size: cover;
-    height: 92vh;
-}
-
-.nav-list {
+.lista {
     list-style: none;
     display: flex;
+    letter-spacing: 3px;
 }
 
-.nav-list li {
-    letter-spacing: 3px;
+.lista li {
     margin-left: 32px;
 }
 
-.mobile-menu {
-    display: none;
-    cursor: pointer;
-}
-
-.mobile-menu div {
-    width: 32px;
-    height: 2px;
-    background: #fff;
-    margin: 8px;
-    transition: 0.3s;
-}
-
-
-@media (max-width: 1000px) {
-    body {
-        overflow-x: hidden;     
-    }
-
-    main {
-        background: url("./assets/wallpaper1_minimal.jpg");
-        background-size: cover;
-        height: 180vh;
-    }
-
-    .nav-list {
-        position: absolute;
-        top: 8vh;
-        right: 0;
-        width: 50vw;    
-        height: 92vh;
-        background: #23232e;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-around;
-        transform: translateX(100%);
-        transition: transform 0.3s ease-in;
-        z-index: 15;
-    }
-    
-    .nav-list li {
-        margin-left: 0;
-        opacity: 0;
-    }
-
-    .mobile-menu {
-        display: block;
-    }
-
-    .container {
-        flex-direction: column;
-    }
-
-
-}
-
-.nav-list.active {
-    transform: translateX(0%);
-}
-
-@keyframes navLinkFade {
-    from {
-        opacity: 0;
-        transform: translateX(50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0px);
-    }
-}
-
-.mobile-menu.active .line1 {
-    transform: rotate(-45deg) translate(-8px, 8px);
-}
-.mobile-menu.active .line2 {
-    opacity: 0;
-}
-.mobile-menu.active .line3 {
-    transform: rotate(45deg) translate(-5px, -7px);
-
-}
-
-
-
-/* CONTAINER E CARDS DO INDEX: */
-
-body {
-   font-family: consolas;
+.logo {
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
 }
 
 .container {
-    width: 1000px;
-    position: absolute;
     display: flex;
-    justify-content: space-between;
-    margin-left: 280px;
-    margin-top: 100px;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
 }
 
 .container .card {
-    position: relative;
+    margin-top: 7vh;
     cursor: pointer;
+    padding: 20px;
 }
 
 .container .card .face {
@@ -238,63 +156,81 @@ body {
 }
 
 
-/* ROTA DE CONTATOS: */
+/* ROTA CONTATOS */
 
 .div-contatos {
-    position: absolute;
+    width: 600px;
+    padding: 20px;
+    margin: auto;
     background-color: #23232E;
     color: #fff;
-    margin-top: 50px;
-    margin-left: 430px;
-    padding-bottom: 150px;
-    padding-top: 15px;
-    padding-left: 15px;
-    padding-right: 230px;
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
 }
 
-.div-contatos p {
-    display: flex;
+p {
     margin-top: 15px;
-    flex-direction: column;
 }
 
-.div-contatos h1 {
+h1 {
     justify-content: center;
     align-items: center;
     margin-bottom: 20px;
 }
 
+/* RODAPÉ */
 
 
-
-.card-rodape {
+.conteudo {
     position: absolute;
-    padding: 30px;
-    color: #fff;
-    margin-top: 570px;
-    margin-left: 1220px;
+    display: flex;
+    margin-left: 75.5vw;
     cursor: pointer;
 }
 
+.card-rodape {
+    background-color: #23232E;
+    margin-top: 30px;
+    color: #fff;
+}
 
-.card-rodape .conteudo .pic {
+.pic {
     position: absolute;
+    margin-left: 165px;
     height: 50px;
     z-index: 1;
-    margin-left: 100px;
     padding: 10px;
 }
 
-.card-rodape .conteudo a {
-    position: absolute;
-    margin-top: 20px;
+#a-footer {
+    margin-top: 18px;
     font-size: 15px;
+    padding: 10px;
+    padding-right: 23px;
+    background: black;
+    border-radius: 25px;
     opacity: 0;
-    
 }
 
-.card-rodape .conteudo:hover a {
-    transform: translateX(-30px);
+.card-rodape .conteudo:hover #a-footer {
+    transform: translateX(-53px);
     opacity: 1;
+}
+
+@media (max-width: 1000px) {
+    .container {
+        flex-direction: column;
+    }
+    .lista {
+        display: none;
+    }
+
+    .mobile-menu #hamb{
+        display: block;
+    }
+
+    .conteudo {
+        margin-left: 54vw;
+        cursor: pointer;
+    }
+    
 }
