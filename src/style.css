@@ -199,6 +199,7 @@ h1 {
     height: 50px;
     z-index: 1;
     padding: 10px;
+    transition: all ease 0.3s;
 }
 
 #a-footer {
@@ -212,8 +213,12 @@ h1 {
 }
 
 .card-rodape .conteudo:hover #a-footer {
-    transform: translateX(-53px);
+    transform: translateX(-23px);
     opacity: 1;
+}
+
+.conteudo:hover .pic {
+    transform: translateX(30px);
 }
 
 @media (max-width: 1000px) {
@@ -229,8 +234,16 @@ h1 {
     }
 
     .conteudo {
-        margin-left: 43vw;
-        cursor: pointer;
+        margin-left: 8vw;
+    }
+
+    .card-rodape .conteudo:hover #a-footer {
+        transform: translateX(-23px);
+        opacity: 1;
+    }
+
+    .conteudo:hover .pic {
+        transform: translateX(30px);
     }
     
 }
